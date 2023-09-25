@@ -180,7 +180,7 @@ var (
 var (
 	theRealMcCoy = testEntry{
 		key: fmt.Sprintf("%s#%s", qidMcCoy, didMcCoy),
-		qid: aidMcCoy,
+		qid: qidMcCoy,
 		did: didMcCoy,
 		properties: map[string]bigtableDataEntry{
 			aid: {
