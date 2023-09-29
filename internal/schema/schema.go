@@ -1,8 +1,8 @@
 package schema
 
 const (
-	Instance                           = "UAPL-DEFAULT-INSTANCE"
-	Project                            = "UAPL-DEFAULT-PROJECT"
+	Instance                           = "uapl-dev-devicemgmt"
+	Project                            = "smoothwall-sandbox"
 	TableName                          = "UaplDevices"
 	ColumnFamilyFirebaseProperties     = "FirebaseProperties"
 	ColumnFamilyDeviceProperties       = "DeviceProperties"
