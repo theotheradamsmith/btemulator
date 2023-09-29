@@ -141,6 +141,7 @@ type testEntry struct {
 
 const (
 	aid        = "aid"
+	did        = "did"
 	appk       = "appk"
 	trusted    = "trusted"
 	registered = "registered"
@@ -188,16 +189,37 @@ var (
 		key: fmt.Sprintf("%s#%s", qidFooUSD, didFoo1),
 		qid: qidFooUSD,
 		did: didFoo1,
+		properties: map[string]bigtableDataEntry{
+			did: {
+				columnFamilyName: schema.ColumnFamilyDeviceProperties,
+				columnName:       schema.ColumnDID,
+				data:             []byte(didFoo1),
+			},
+		},
 	}
 	foo2 = testEntry{
 		key: fmt.Sprintf("%s#%s", qidFooUSD, didFoo2),
 		qid: qidFooUSD,
 		did: didFoo2,
+		properties: map[string]bigtableDataEntry{
+			did: {
+				columnFamilyName: schema.ColumnFamilyDeviceProperties,
+				columnName:       schema.ColumnDID,
+				data:             []byte(didFoo2),
+			},
+		},
 	}
 	foo3 = testEntry{
 		key: fmt.Sprintf("%s#%s", qidFooUSD, didFoo3),
 		qid: qidFooUSD,
 		did: didFoo3,
+		properties: map[string]bigtableDataEntry{
+			did: {
+				columnFamilyName: schema.ColumnFamilyDeviceProperties,
+				columnName:       schema.ColumnDID,
+				data:             []byte(didFoo3),
+			},
+		},
 	}
 
 	theRealMcCoy = testEntry{
