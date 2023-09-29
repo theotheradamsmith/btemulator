@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"strconv"
 	"time"
 
 	"cloud.google.com/go/bigtable"
@@ -266,7 +267,7 @@ var (
 			registered: {
 				columnFamilyName: schema.ColumnFamilyRegistrationProperties,
 				columnName:       schema.ColumnRegistered,
-				data:             []byte(time.Now().String()),
+				data:             []byte(strconv.FormatInt(time.Now().UTC().UnixMilli(), 10)),
 			},
 		},
 	}
