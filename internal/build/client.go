@@ -164,6 +164,11 @@ const (
 	didRegistered  = "did-already-registered"
 	appkRegistered = "appk-already-registered"
 
+	qidFooUSD = "foo-usd-123"
+	didFoo1   = "device-one"
+	didFoo2   = "device-two"
+	didFoo3   = "device-three"
+
 	hardware = "hardware"
 	software = "software"
 )
@@ -179,6 +184,22 @@ var (
 */
 
 var (
+	foo1 = testEntry{
+		key: fmt.Sprintf("%s#%s", qidFooUSD, didFoo1),
+		qid: qidFooUSD,
+		did: didFoo1,
+	}
+	foo2 = testEntry{
+		key: fmt.Sprintf("%s#%s", qidFooUSD, didFoo2),
+		qid: qidFooUSD,
+		did: didFoo2,
+	}
+	foo3 = testEntry{
+		key: fmt.Sprintf("%s#%s", qidFooUSD, didFoo3),
+		qid: qidFooUSD,
+		did: didFoo3,
+	}
+
 	theRealMcCoy = testEntry{
 		key: fmt.Sprintf("%s#%s", qidMcCoy, didMcCoy),
 		qid: qidMcCoy,
@@ -282,7 +303,15 @@ func addTestData(ctx context.Context) {
 
 	tbl := client.Open(schema.TableName)
 
-	testEntires := []testEntry{theRealMcCoy, readyEntry, inFlightEntry, registeredEntry}
+	testEntires := []testEntry{
+		foo1,
+		foo2,
+		foo3,
+		theRealMcCoy,
+		readyEntry,
+		inFlightEntry,
+		registeredEntry,
+	}
 
 	for _, entry := range testEntires {
 		mut := bigtable.NewMutation()
